@@ -19,6 +19,7 @@ except VersionConflict:
     print("Error: version of setuptools is too old (<38.3)!")
     sys.exit(1)
 
-
 if __name__ == "__main__":
-    setup(use_pyscaffold=True)
+    setup(use_pyscaffold=True,
+          install_requires=["basketball_reference_web_scraper @ https://github.com/Yotamho/basketball_reference_web_scraper/tarball/master#egg=basketball_reference_web_scraper-4.3.0"]
+          )
