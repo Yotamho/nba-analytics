@@ -2,4 +2,4 @@
 Contributors
 ============
 
-* yotam <yotam.hochman@cyberbit.com>
+* yotam <yotamho@gmail.com>
