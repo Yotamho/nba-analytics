@@ -1,4 +1,5 @@
 from os.path import join
+from pytz import timezone
 
 from basketball_reference_web_scraper.client import season_schedule, play_by_play
 from basketball_reference_web_scraper.data import OutputType, OutputWriteOption, TEAM_TO_TEAM_ABBREVIATION
@@ -7,6 +8,7 @@ from basketball_reference_web_scraper.data import OutputType, OutputWriteOption,
 def pbp_for_range(start_year, end_year, path):
     for season in map(season_schedule, range(start_year, end_year + 1)):
         for match in season:
+            match['start_time'] = match['start_time'].astimezone(timezone('US/Eastern'))
             pbp_for_schedule_record(path)(match)
 
 
@@ -18,7 +20,7 @@ def format_path(path, match):
 def pbp_for_schedule_record(path):
     return lambda match: play_by_play(
         match["home_team"],
-        match["start_time"].day - 1,  # days are zero based
+        match["start_time"].day,  # days are zero based
         match["start_time"].month,
         match["start_time"].year,
         OutputType.JSON,
