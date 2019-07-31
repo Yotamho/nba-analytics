@@ -22,5 +22,5 @@ except VersionConflict:
 if __name__ == "__main__":
     setup(use_pyscaffold=True,
           install_requires=["basketball_reference_web_scraper==4.3.0"],
-          dependency_links=["https://github.com/Yotamho/basketball_reference_web_scraper/tarball/ef9631b64ebf04510592ba5d177d6acafb8c2a43#egg=basketball_reference_web_scraper-4.3.0"]
+          dependency_links=["https://github.com/Yotamho/basketball_reference_web_scraper/tarball/53a1b4fa4a2e8e23c3be3045956dffc80b395b0b#egg=basketball_reference_web_scraper-4.3.0"]
           )
